@@ -15,6 +15,7 @@
 		48A89E2E253BBEC200853BFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A89E2D253BBEC200853BFD /* Assets.xcassets */; };
 		48A89E31253BBEC200853BFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A89E2F253BBEC200853BFD /* LaunchScreen.storyboard */; };
 		48A89E3A253BBF5900853BFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48A89E39253BBF5900853BFD /* GoogleService-Info.plist */; };
+		F004F14C253C3E4200D63E84 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004F14B253C3E4200D63E84 /* Utilities.swift */; };
 		F07DB26D253BFFAC008D7E5F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07DB26C253BFFAC008D7E5F /* SignUpViewController.swift */; };
 		F07DB270253BFFCC008D7E5F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07DB26F253BFFCC008D7E5F /* LogInViewController.swift */; };
 		F07DB273253BFFEF008D7E5F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07DB272253BFFEF008D7E5F /* HomeViewController.swift */; };
@@ -33,6 +34,7 @@
 		4B9C2F0685C32D24D85C7798 /* Pods-shiffle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shiffle.release.xcconfig"; path = "Target Support Files/Pods-shiffle/Pods-shiffle.release.xcconfig"; sourceTree = "<group>"; };
 		9A6D9078861CD89837E69F86 /* Pods_shiffle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shiffle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0154AC5343174A5D6A6DE7 /* Pods-shiffle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shiffle.debug.xcconfig"; path = "Target Support Files/Pods-shiffle/Pods-shiffle.debug.xcconfig"; sourceTree = "<group>"; };
+		F004F14B253C3E4200D63E84 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		F07DB26C253BFFAC008D7E5F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F07DB26F253BFFCC008D7E5F /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		F07DB272253BFFEF008D7E5F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		F07DB26B253BFF3B008D7E5F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F004F14B253C3E4200D63E84 /* Utilities.swift */,
 				F07DB26C253BFFAC008D7E5F /* SignUpViewController.swift */,
 				F07DB26F253BFFCC008D7E5F /* LogInViewController.swift */,
 				F07DB272253BFFEF008D7E5F /* HomeViewController.swift */,
@@ -228,6 +231,7 @@
 			files = (
 				48A89E29253BBEC200853BFD /* ViewController.swift in Sources */,
 				48A89E25253BBEC200853BFD /* AppDelegate.swift in Sources */,
+				F004F14C253C3E4200D63E84 /* Utilities.swift in Sources */,
 				F07DB26D253BFFAC008D7E5F /* SignUpViewController.swift in Sources */,
 				F07DB270253BFFCC008D7E5F /* LogInViewController.swift in Sources */,
 				48A89E27253BBEC200853BFD /* SceneDelegate.swift in Sources */,
