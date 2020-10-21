@@ -7,7 +7,6 @@
 
 import UIKit
 import FirebaseAuth
-import Firebase
 
 class LoginViewController: UIViewController {
 
@@ -50,8 +49,11 @@ class LoginViewController: UIViewController {
             guard let strongSelf = self else {return}
             if let err = err {
                 print(err.localizedDescription)
+                return
             }
-            self!.checkUserInfo()
+            else {
+                self!.checkUserInfo()
+            }
         }
         
         
@@ -59,7 +61,7 @@ class LoginViewController: UIViewController {
     
     func checkUserInfo() {
         if Auth.auth().currentUser != nil {
-            print("worked!")
+            print(Auth.auth().currentUser)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainHome")
             vc.modalPresentationStyle = .overFullScreen
