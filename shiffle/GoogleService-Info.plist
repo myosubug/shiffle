@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1089230147424-6mp5m9is6nqui05g2i8k9mntdglps3a3.apps.googleusercontent.com</string>
+	<string>1089230147424-1v29gpd207ldvuo55kean799td520r93.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1089230147424-6mp5m9is6nqui05g2i8k9mntdglps3a3</string>
+	<string>com.googleusercontent.apps.1089230147424-1v29gpd207ldvuo55kean799td520r93</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAncPfaiJV6mSq-sjKuSzxW6jxJBMj0Djs</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>shiffle.shiffle</string>
+	<string>shiffle</string>
 	<key>PROJECT_ID</key>
 	<string>shiffle-13edc</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1089230147424:ios:bda0f91360bd9353eb9805</string>
+	<string>1:1089230147424:ios:df525e62ce6c50c5eb9805</string>
 	<key>DATABASE_URL</key>
 	<string>https://shiffle-13edc.firebaseio.com</string>
 </dict>
