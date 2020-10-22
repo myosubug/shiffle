@@ -55,7 +55,7 @@ class LoginViewController: UIViewController {
                 self!.checkUserInfo()
             }
         }
-        
+    
         
     }
     
