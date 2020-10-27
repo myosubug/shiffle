@@ -16,6 +16,8 @@
 		48A89E2E253BBEC200853BFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A89E2D253BBEC200853BFD /* Assets.xcassets */; };
 		48A89E31253BBEC200853BFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A89E2F253BBEC200853BFD /* LaunchScreen.storyboard */; };
 		48BF5F9225413DF700E5EA66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48BF5F9125413DF700E5EA66 /* GoogleService-Info.plist */; };
+		F02EB5A62548935900C3CB9A /* MainScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02EB5A52548935900C3CB9A /* MainScheduleViewController.swift */; };
+		F02EB5A92548937400C3CB9A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02EB5A82548937400C3CB9A /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		4B9C2F0685C32D24D85C7798 /* Pods-shiffle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shiffle.release.xcconfig"; path = "Target Support Files/Pods-shiffle/Pods-shiffle.release.xcconfig"; sourceTree = "<group>"; };
 		9A6D9078861CD89837E69F86 /* Pods_shiffle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shiffle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0154AC5343174A5D6A6DE7 /* Pods-shiffle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shiffle.debug.xcconfig"; path = "Target Support Files/Pods-shiffle/Pods-shiffle.debug.xcconfig"; sourceTree = "<group>"; };
+		F02EB5A52548935900C3CB9A /* MainScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScheduleViewController.swift; sourceTree = "<group>"; };
+		F02EB5A82548937400C3CB9A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 				48A89E2F253BBEC200853BFD /* LaunchScreen.storyboard */,
 				48A89E32253BBEC200853BFD /* Info.plist */,
 				48BF5F9125413DF700E5EA66 /* GoogleService-Info.plist */,
+				F02EB5A52548935900C3CB9A /* MainScheduleViewController.swift */,
+				F02EB5A82548937400C3CB9A /* DetailViewController.swift */,
 			);
 			path = shiffle;
 			sourceTree = "<group>";
@@ -215,6 +221,8 @@
 				48918918254090C600397870 /* LoginViewController.swift in Sources */,
 				48A89E25253BBEC200853BFD /* AppDelegate.swift in Sources */,
 				4891891B254090D700397870 /* SignUpViewController.swift in Sources */,
+				F02EB5A92548937400C3CB9A /* DetailViewController.swift in Sources */,
+				F02EB5A62548935900C3CB9A /* MainScheduleViewController.swift in Sources */,
 				48A89E27253BBEC200853BFD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
