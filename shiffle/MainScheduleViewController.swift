@@ -9,7 +9,7 @@ import UIKit
 
 class MainScheduleViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-   
+    
     @IBOutlet weak var tableView: UITableView!
     
     var weekday = ["Monday","Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
