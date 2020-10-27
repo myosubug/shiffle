@@ -15,7 +15,10 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func backToMain(_ sender: Any) {
+        presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
