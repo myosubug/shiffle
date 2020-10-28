@@ -28,7 +28,7 @@ class MainScheduleViewController: UIViewController, UITableViewDelegate, UITable
         ref = Database.database().reference()
         
         ref?.child("Schedules").observe(.childAdded, with: { (snapshot) in
-            self.count = self.count % 6
+            self.count = self.count % 7
             var temp = self.weekday[self.count]
             let new = snapshot.value as? String
             if let updated = new {
