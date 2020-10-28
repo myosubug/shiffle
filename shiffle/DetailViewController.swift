@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class DetailViewController: UIViewController {
 
+    
+    @IBOutlet weak var textView: UITextView!
+    var ref: DatabaseReference?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ref = Database.database().reference()
         // Do any additional setup after loading the view.
     }
     
@@ -19,6 +23,10 @@ class DetailViewController: UIViewController {
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func submitData(_ sender: Any) {
+        ref?.child("Schedules").childByAutoId().setValue(textView.text)
+        presentingViewController?.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
