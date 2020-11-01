@@ -5,6 +5,7 @@
 //  Created by Minh Hang Chu on 2020-11-01.
 //
 
+import FSCalendar
 import UIKit
 
 class WeekCalendarViewController: UIViewController {

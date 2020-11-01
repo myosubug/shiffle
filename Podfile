@@ -10,6 +10,6 @@ target 'shiffle' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Firebase/Database'
-  pod 'QVRWeekView'
+  pod 'FSCalendar'
 
 end

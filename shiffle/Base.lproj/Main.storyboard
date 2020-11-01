@@ -236,6 +236,7 @@
         <!--Week Calendar View Controller-->
         <scene sceneID="gDw-fd-rKU">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y0o-pM-S2C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="kdc-XZ-90p" customClass="WeekCalendarViewController" customModule="shiffle" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yQ1-Zn-T4g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
@@ -248,10 +249,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wDv-vF-auM" customClass="WeekView" customModule="QVRWeekView">
-                                <rect key="frame" x="9" y="123" width="405" height="681"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f5p-zz-ETJ" customClass="FSCalendar">
+                                <rect key="frame" x="20" y="104" width="374" height="343"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="yQ1-Zn-T4g" id="rM7-Lm-1br"/>
+                                    <outlet property="delegate" destination="yQ1-Zn-T4g" id="r4Z-1z-inL"/>
+                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kHv-W3-Zmg"/>
@@ -259,7 +264,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="OXF-4c-udx"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y0o-pM-S2C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="889.85507246376824" y="111.83035714285714"/>
         </scene>
