@@ -18,6 +18,7 @@
 		48BF5F9225413DF700E5EA66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48BF5F9125413DF700E5EA66 /* GoogleService-Info.plist */; };
 		F02EB5A62548935900C3CB9A /* MainScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02EB5A52548935900C3CB9A /* MainScheduleViewController.swift */; };
 		F02EB5A92548937400C3CB9A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02EB5A82548937400C3CB9A /* DetailViewController.swift */; };
+		F073DB55254E8A6C00C99213 /* WeekCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F073DB54254E8A6C00C99213 /* WeekCalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		AB0154AC5343174A5D6A6DE7 /* Pods-shiffle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shiffle.debug.xcconfig"; path = "Target Support Files/Pods-shiffle/Pods-shiffle.debug.xcconfig"; sourceTree = "<group>"; };
 		F02EB5A52548935900C3CB9A /* MainScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScheduleViewController.swift; sourceTree = "<group>"; };
 		F02EB5A82548937400C3CB9A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F073DB54254E8A6C00C99213 /* WeekCalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekCalendarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,15 +75,12 @@
 			children = (
 				48A89E24253BBEC200853BFD /* AppDelegate.swift */,
 				48A89E26253BBEC200853BFD /* SceneDelegate.swift */,
+				F073DB4A254E865F00C99213 /* Views */,
 				48A89E2A253BBEC200853BFD /* Main.storyboard */,
-				4891891A254090D700397870 /* SignUpViewController.swift */,
-				48918917254090C600397870 /* LoginViewController.swift */,
 				48A89E2D253BBEC200853BFD /* Assets.xcassets */,
 				48A89E2F253BBEC200853BFD /* LaunchScreen.storyboard */,
 				48A89E32253BBEC200853BFD /* Info.plist */,
 				48BF5F9125413DF700E5EA66 /* GoogleService-Info.plist */,
-				F02EB5A52548935900C3CB9A /* MainScheduleViewController.swift */,
-				F02EB5A82548937400C3CB9A /* DetailViewController.swift */,
 			);
 			path = shiffle;
 			sourceTree = "<group>";
@@ -101,6 +100,18 @@
 				4B9C2F0685C32D24D85C7798 /* Pods-shiffle.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F073DB4A254E865F00C99213 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F02EB5A82548937400C3CB9A /* DetailViewController.swift */,
+				48918917254090C600397870 /* LoginViewController.swift */,
+				F02EB5A52548935900C3CB9A /* MainScheduleViewController.swift */,
+				4891891A254090D700397870 /* SignUpViewController.swift */,
+				F073DB54254E8A6C00C99213 /* WeekCalendarViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +231,7 @@
 			files = (
 				48918918254090C600397870 /* LoginViewController.swift in Sources */,
 				48A89E25253BBEC200853BFD /* AppDelegate.swift in Sources */,
+				F073DB55254E8A6C00C99213 /* WeekCalendarViewController.swift in Sources */,
 				4891891B254090D700397870 /* SignUpViewController.swift in Sources */,
 				F02EB5A92548937400C3CB9A /* DetailViewController.swift in Sources */,
 				F02EB5A62548935900C3CB9A /* MainScheduleViewController.swift in Sources */,
