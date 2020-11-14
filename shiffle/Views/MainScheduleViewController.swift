@@ -15,6 +15,7 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
     @IBOutlet var calendar: FSCalendar!
     @IBOutlet var table: UITableView!
     var daySchedule = [Schedule]()
+    var dstring = ""
     
     
     
@@ -28,12 +29,11 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
         
     }
     
-    
-    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         let format = DateFormatter()
         format.dateFormat = "YYYYMMdd"
-        let dstring = format.string(from: date)
-        print("\(dstring)")
+        dstring = format.string(from: date)
+        loadSchedule()
     }
     
     
@@ -43,9 +43,8 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        let day = daySchedule[indexPath.row]
-        
-        cell.textLabel?.text = "\(day.time): \(day.name)"
+        let s = daySchedule[indexPath.row]
+        cell.textLabel?.text = "\(s.day): \(s.time): \(s.name)"
         return cell
     }
     
@@ -65,36 +64,34 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
         composeAlert.addAction(UIAlertAction(title: "Submit", style: .default, handler: {
             (action:UIAlertAction) in
             if let inputTime = composeAlert.textFields?.first?.text, let inputName = composeAlert.textFields?.last?.text {
-                let newSchedule = Schedule(time: inputTime, name: inputName)
-                var ref:DocumentReference? = nil
-                ref = self.db.collection("schedules").addDocument(data: newSchedule.dictionary) {
+                let newSchedule = Schedule(day:self.dstring, time: inputTime, name: inputName)
+                self.db.collection("schedules").addDocument(data: newSchedule.dictionary){
                     error in
                         if let error = error {
                             print("\(error.localizedDescription)")
                         } else {
-                            print("Document added with ID: \(ref!.documentID)")
+                            print("Document added")
                         }
                 }
                 
             }
         }))
-        
         self.present(composeAlert, animated: true, completion: nil)
     }
     
     func loadSchedule(){
-        db.collection("schedules").getDocuments() {
+        let query = self.db.collection("schedules").whereField("day", isEqualTo: self.dstring)
+        query.getDocuments() {
             QuerySnapshot, error in
             if let error = error {
                 print("\(error.localizedDescription)")
             } else{
                 self.daySchedule = QuerySnapshot!.documents.flatMap({Schedule(dictionary: $0.data())})
+                print("\(self.daySchedule)")
                 DispatchQueue.main.async {
                     self.table.reloadData()
                 }
             }
         }
     }
-
-
 }

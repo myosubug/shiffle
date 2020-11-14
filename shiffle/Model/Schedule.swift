@@ -14,10 +14,12 @@ protocol DocumentSerializable {
 
 
 struct Schedule {
+    var day: String
     var time: String
     var name: String
     var dictionary:[String:Any] {
         return [
+            "day"  : day,
             "time" : time,
             "name" : name
         ]
@@ -27,8 +29,9 @@ struct Schedule {
 
 extension Schedule : DocumentSerializable {
     init?(dictionary: [String:Any]){
-        guard let name = dictionary["name"] as? String,
+        guard let day = dictionary["day"] as? String,
+              let name = dictionary["name"] as? String,
               let time = dictionary["time"] as? String else {return nil}
-        self.init(time: time, name: name)
+        self.init(day: day, time: time, name: name)
     }
 }
