@@ -18,6 +18,8 @@
 		48A89E31253BBEC200853BFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A89E2F253BBEC200853BFD /* LaunchScreen.storyboard */; };
 		48BF5F9225413DF700E5EA66 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48BF5F9125413DF700E5EA66 /* GoogleService-Info.plist */; };
 		F02EB5A62548935900C3CB9A /* MainScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02EB5A52548935900C3CB9A /* MainScheduleViewController.swift */; };
+		F08B2F7E2563A46E003334EE /* EditTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08B2F7D2563A46E003334EE /* EditTeamViewController.swift */; };
+		F08B2F812563A4C2003334EE /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08B2F802563A4C2003334EE /* TeamViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		9A6D9078861CD89837E69F86 /* Pods_shiffle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shiffle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB0154AC5343174A5D6A6DE7 /* Pods-shiffle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shiffle.debug.xcconfig"; path = "Target Support Files/Pods-shiffle/Pods-shiffle.debug.xcconfig"; sourceTree = "<group>"; };
 		F02EB5A52548935900C3CB9A /* MainScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScheduleViewController.swift; sourceTree = "<group>"; };
+		F08B2F7D2563A46E003334EE /* EditTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTeamViewController.swift; sourceTree = "<group>"; };
+		F08B2F802563A4C2003334EE /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 				48918917254090C600397870 /* LoginViewController.swift */,
 				F02EB5A52548935900C3CB9A /* MainScheduleViewController.swift */,
 				4891891A254090D700397870 /* SignUpViewController.swift */,
+				F08B2F7D2563A46E003334EE /* EditTeamViewController.swift */,
+				F08B2F802563A4C2003334EE /* TeamViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,6 +240,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F08B2F7E2563A46E003334EE /* EditTeamViewController.swift in Sources */,
+				F08B2F812563A4C2003334EE /* TeamViewController.swift in Sources */,
 				48918918254090C600397870 /* LoginViewController.swift in Sources */,
 				48A89E25253BBEC200853BFD /* AppDelegate.swift in Sources */,
 				4891891B254090D700397870 /* SignUpViewController.swift in Sources */,
