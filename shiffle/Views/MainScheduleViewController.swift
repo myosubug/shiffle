@@ -26,7 +26,7 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         table.dataSource = self
         loadSchedule()
-        
+               
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
@@ -98,7 +98,7 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
                 self.daySchedule = QuerySnapshot!.documents.flatMap({Schedule(dictionary: $0.data())})
                 print("\(self.daySchedule)")
                 DispatchQueue.main.async {
-                    self.table.reloadData()
+                self.table.reloadData()
                 }
             }
         }
