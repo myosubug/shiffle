@@ -12,19 +12,30 @@ class EditTeamViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
     
-    var ref:DatabaseReference?
+    @IBOutlet weak var textFieldName: UITextField!
+    
+    @IBOutlet weak var textFieldContact: UITextField!
+    
+    var refEmployees:DatabaseReference?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref = Database.database().reference()
+
+        refEmployees = Database.database().reference()
 
         // Do any additional setup after loading the view.
     }
     
     @IBAction func addInfo(_ sender: Any) {
-        ref?.child("Employees").childByAutoId().setValue(textView.text)
+        addEmployee()
         presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    func addEmployee(){
+        let key = refEmployees?.child("Employees Info").childByAutoId().key
+        let employee = ["id":key,"employeeName": textFieldName.text! as String,"employeeContact": textFieldContact.text! as String]
+        refEmployees?.child("Employees Info").child(key!).setValue(employee)
     }
     
     @IBAction func cancelEdit(_ sender: Any) {
