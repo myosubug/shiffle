@@ -55,10 +55,10 @@ class TeamViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "employeeCell", for: indexPath) as! EmployeeTableViewCell
         let employee: EmployeeModel
         
+        // load infomation
         employee = employeesList[indexPath.row]
         cell.lblName.text = employee.name
         cell.lblContact.text = employee.contact
-        
         return cell
     }
     
