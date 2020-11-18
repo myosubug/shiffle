@@ -37,12 +37,14 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
     }
     
     
-    @IBAction func viewTeamList(_ sender: Any) {
+   
+    @IBAction func viewMyTeam(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "teamList")
+        let vc = storyboard.instantiateViewController(withIdentifier: "employeesList")
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return daySchedule.count
