@@ -25,6 +25,10 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
         calendar.delegate = self
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         table.dataSource = self
+        let currentDateTime = Date()
+        let format = DateFormatter()
+        format.dateFormat = "YYYYMMdd"
+        dstring = format.string(from: currentDateTime)
         loadSchedule()
                
     }
@@ -86,6 +90,7 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
             }
         }))
         self.present(composeAlert, animated: true, completion: nil)
+        checkForUpdate()
     }
     
     func loadSchedule(){
@@ -98,9 +103,32 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
                 self.daySchedule = QuerySnapshot!.documents.flatMap({Schedule(dictionary: $0.data())})
                 print("\(self.daySchedule)")
                 DispatchQueue.main.async {
-                self.table.reloadData()
+                    self.table.reloadData()
                 }
             }
         }
     }
+    
+    func checkForUpdate(){
+        let query = self.db.collection("schedules").whereField("day", isEqualTo: self.dstring)
+        query.addSnapshotListener {
+            QuerySnapshot, error in
+            
+            guard let snapshot = QuerySnapshot else {return}
+            snapshot.documentChanges.forEach{
+                diff in
+                if diff.type == .added{
+                    self.daySchedule.append(Schedule(dictionary: diff.document.data())!)
+                    DispatchQueue.main.async {
+                        self.table.reloadData()
+                    }
+                }
+            }
+                
+        
+        
+        }
+    }
+    
+
 }
