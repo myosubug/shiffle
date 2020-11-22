@@ -101,7 +101,6 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
                 print("\(error.localizedDescription)")
             } else{
                 self.daySchedule = QuerySnapshot!.documents.flatMap({Schedule(dictionary: $0.data())})
-                print("\(self.daySchedule)")
                 DispatchQueue.main.async {
                     self.table.reloadData()
                 }

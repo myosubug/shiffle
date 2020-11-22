@@ -8,30 +8,30 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
 
     @IBOutlet var email: UITextField!
     @IBOutlet var password: UITextField!
+    var db:Firestore!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        db = Firestore.firestore()
     }
     
 
     @IBAction func signUpTabbed(_ sender: Any) {
         if email.text?.isEmpty == true {
-            print("no text in email")
             return
         }
         
         if password.text?.isEmpty == true {
-            print("no text in password")
             return
         }
-        
         signUp()
+        checkManager()
     }
     
     @IBAction func haveAccountLoginTabbed(_ sender: Any) {
@@ -47,6 +47,20 @@ class SignUpViewController: UIViewController {
                 print("Error \(error?.localizedDescription)")
                 return
             }
+            
+            if let newEmail = self.email.text {
+                let newUser = User(email:newEmail, manager: false)
+                self.db.collection("users").addDocument(data: newUser.dictionary){
+                    error in
+                        if let error = error {
+                            print("\(error.localizedDescription)")
+                        } else {
+                            print("Document added")
+                        }
+                }
+                
+            }
+            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainHome")
             vc.modalPresentationStyle = .overFullScreen
@@ -55,6 +69,24 @@ class SignUpViewController: UIViewController {
         
         }
         
+    }
+    func checkManager(){
+        let query = self.db.collection("users").whereField("email", isEqualTo: self.email.text)
+        query.getDocuments() {
+            QuerySnapshot, error in
+            if let error = error {
+                print("\(error.localizedDescription)")
+            } else{
+                for document in QuerySnapshot!.documents {
+                    if (document.get("manager") ?? false) as! Bool {
+                        Manager.isManager = true
+                    } else{
+                        Manager.isManager = false
+                    }
+                     
+                }
+            }
+        }
     }
     
 }

@@ -7,14 +7,17 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class LoginViewController: UIViewController {
 
     @IBOutlet var email: UITextField!
     @IBOutlet var password: UITextField!
+    var db:Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        db = Firestore.firestore()
 
         // Do any additional setup after loading the view.
     }
@@ -33,15 +36,14 @@ class LoginViewController: UIViewController {
     
     func validateFields() {
         if email.text?.isEmpty == true {
-            print("no text in email")
             return
         }
         
         if password.text?.isEmpty == true {
-            print("no text in password")
             return
         }
         login()
+        checkManager()
     }
     
     func login() {
@@ -61,11 +63,29 @@ class LoginViewController: UIViewController {
     
     func checkUserInfo() {
         if Auth.auth().currentUser != nil {
-            print(Auth.auth().currentUser)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "mainHome")
             vc.modalPresentationStyle = .overFullScreen
             present(vc, animated: true)
+        }
+    }
+    
+    func checkManager(){
+        let query = self.db.collection("users").whereField("email", isEqualTo: self.email.text)
+        query.getDocuments() {
+            QuerySnapshot, error in
+            if let error = error {
+                print("\(error.localizedDescription)")
+            } else{
+                for document in QuerySnapshot!.documents {
+                    if (document.get("manager") ?? false) as! Bool {
+                        Manager.isManager = true
+                    } else{
+                        Manager.isManager = false
+                    }
+                     
+                }
+            }
         }
     }
 }

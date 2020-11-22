@@ -93,7 +93,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quQ-r4-00z">
-                                <rect key="frame" x="189" y="255" width="54" height="30"/>
+                                <rect key="frame" x="189" y="263" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
@@ -101,7 +101,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8r-SS-sTc">
-                                <rect key="frame" x="132" y="293" width="168" height="30"/>
+                                <rect key="frame" x="132" y="301" width="168" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Have an account? Log in"/>
                                 <connections>
@@ -264,6 +264,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="TeamEditButton" destination="KZL-IE-vh2" id="9wF-NG-kn3"/>
                         <outlet property="tblEmployees" destination="caE-1Q-bnU" id="2nT-eH-7PR"/>
                     </connections>
                 </viewController>
