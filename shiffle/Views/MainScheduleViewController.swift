@@ -40,8 +40,7 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
         loadSchedule()
     }
     
-    
-   
+       
     @IBAction func viewMyTeam(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "employeesList")
@@ -57,15 +56,20 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let s = daySchedule[indexPath.row]
-        cell.textLabel?.text = "\(s.day): \(s.time): \(s.name)"
+      //  cell.textLabel?.text = "\(s.day): \(s.time): \(s.name)"
         return cell
     }
     
-    @IBAction func addSchedule(_ sender: Any) {
+    
+  /*  @IBAction func addSchedule(_ sender: Any) {
         let composeAlert = UIAlertController(title: "Add Schedule", message: "Enter your schedule her ", preferredStyle: .alert)
         
         composeAlert.addTextField{ (textFied:UITextField) in
-            textFied.placeholder = "Working time"
+            textFied.placeholder = "Start time"
+        }
+        
+        composeAlert.addTextField{ (textFied:UITextField) in
+            textFied.placeholder = "End time"
         }
         
         composeAlert.addTextField{ (textFied:UITextField) in
@@ -75,23 +79,24 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
         composeAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         composeAlert.addAction(UIAlertAction(title: "Submit", style: .default, handler: {
-            (action:UIAlertAction) in
-            if let inputTime = composeAlert.textFields?.first?.text, let inputName = composeAlert.textFields?.last?.text {
-                let newSchedule = Schedule(day:self.dstring, time: inputTime, name: inputName)
-                self.db.collection("schedules").addDocument(data: newSchedule.dictionary){
-                    error in
-                        if let error = error {
-                            print("\(error.localizedDescription)")
-                        } else {
-                            print("Document added")
-                        }
-                }
+     (action:UIAlertAction) in
+                 if let inputTime = composeAlert.textFields?.first?.text, let inputName = composeAlert.textFields?.last?.text {
+                     let newSchedule = Schedule(day:self.dstring, time: inputTime, name: inputName)
+                     self.db.collection("schedules").addDocument(data: newSchedule.dictionary){
+                         error in
+                             if let error = error {
+                                 print("\(error.localizedDescription)")
+                             } else {
+                                 print("Document added")
+                             }
+                     }
                 
             }
         }))
         self.present(composeAlert, animated: true, completion: nil)
         checkForUpdate()
     }
+ */
     
     func loadSchedule(){
         let query = self.db.collection("schedules").whereField("day", isEqualTo: self.dstring)

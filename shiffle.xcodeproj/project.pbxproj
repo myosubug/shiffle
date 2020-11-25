@@ -23,6 +23,7 @@
 		F02EB5A62548935900C3CB9A /* MainScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02EB5A52548935900C3CB9A /* MainScheduleViewController.swift */; };
 		F077BE042565298100EEBAE8 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F077BE032565298100EEBAE8 /* EmployeeTableViewCell.swift */; };
 		F08B2F7E2563A46E003334EE /* EditTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08B2F7D2563A46E003334EE /* EditTeamViewController.swift */; };
+		F0A7CA28256CD3C80005AC1E /* AddShiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7CA27256CD3C80005AC1E /* AddShiftViewController.swift */; };
 		F0D8061525651D2D004E96E8 /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D8061425651D2D004E96E8 /* EmployeeModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		F02EB5A52548935900C3CB9A /* MainScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScheduleViewController.swift; sourceTree = "<group>"; };
 		F077BE032565298100EEBAE8 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
 		F08B2F7D2563A46E003334EE /* EditTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTeamViewController.swift; sourceTree = "<group>"; };
+		F0A7CA27256CD3C80005AC1E /* AddShiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShiftViewController.swift; sourceTree = "<group>"; };
 		F0D8061425651D2D004E96E8 /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 				F08B2F7D2563A46E003334EE /* EditTeamViewController.swift */,
 				F077BE032565298100EEBAE8 /* EmployeeTableViewCell.swift */,
 				F004085E25652BA600EFC009 /* TeamViewController.swift */,
+				F0A7CA27256CD3C80005AC1E /* AddShiftViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0A7CA28256CD3C80005AC1E /* AddShiftViewController.swift in Sources */,
 				F08B2F7E2563A46E003334EE /* EditTeamViewController.swift in Sources */,
 				48918918254090C600397870 /* LoginViewController.swift in Sources */,
 				F0D8061525651D2D004E96E8 /* EmployeeModel.swift in Sources */,
