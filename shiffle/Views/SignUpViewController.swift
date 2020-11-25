@@ -18,7 +18,9 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.password.isSecureTextEntry = true
         db = Firestore.firestore()
+        
     }
     
 

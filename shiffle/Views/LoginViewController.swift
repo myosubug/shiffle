@@ -17,9 +17,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.password.isSecureTextEntry = true
         db = Firestore.firestore()
-
-        // Do any additional setup after loading the view.
     }
     
 
