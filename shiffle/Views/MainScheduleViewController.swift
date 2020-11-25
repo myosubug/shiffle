@@ -29,6 +29,7 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
         let format = DateFormatter()
         format.dateFormat = "YYYYMMdd"
         dstring = format.string(from: currentDateTime)
+        selectedDate.selectedDate = dstring
         loadSchedule()
                
     }
@@ -37,6 +38,7 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
         let format = DateFormatter()
         format.dateFormat = "YYYYMMdd"
         dstring = format.string(from: date)
+        selectedDate.selectedDate = dstring
         loadSchedule()
     }
     
@@ -56,47 +58,10 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let s = daySchedule[indexPath.row]
-      //  cell.textLabel?.text = "\(s.day): \(s.time): \(s.name)"
+        cell.textLabel?.text = "\(s.startTime) - \(s.endTime): \(s.name)"
         return cell
     }
     
-    
-  /*  @IBAction func addSchedule(_ sender: Any) {
-        let composeAlert = UIAlertController(title: "Add Schedule", message: "Enter your schedule her ", preferredStyle: .alert)
-        
-        composeAlert.addTextField{ (textFied:UITextField) in
-            textFied.placeholder = "Start time"
-        }
-        
-        composeAlert.addTextField{ (textFied:UITextField) in
-            textFied.placeholder = "End time"
-        }
-        
-        composeAlert.addTextField{ (textFied:UITextField) in
-            textFied.placeholder = "Your name"
-        }
-        
-        composeAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        composeAlert.addAction(UIAlertAction(title: "Submit", style: .default, handler: {
-     (action:UIAlertAction) in
-                 if let inputTime = composeAlert.textFields?.first?.text, let inputName = composeAlert.textFields?.last?.text {
-                     let newSchedule = Schedule(day:self.dstring, time: inputTime, name: inputName)
-                     self.db.collection("schedules").addDocument(data: newSchedule.dictionary){
-                         error in
-                             if let error = error {
-                                 print("\(error.localizedDescription)")
-                             } else {
-                                 print("Document added")
-                             }
-                     }
-                
-            }
-        }))
-        self.present(composeAlert, animated: true, completion: nil)
-        checkForUpdate()
-    }
- */
     
     func loadSchedule(){
         let query = self.db.collection("schedules").whereField("day", isEqualTo: self.dstring)
@@ -113,6 +78,16 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
         }
     }
     
+    
+    @IBAction func switchCalendarScope(_ sender: Any) {
+        if self.calendar.scope == FSCalendarScope.month {
+            self.calendar.scope = .week
+        } else {
+            self.calendar.scope = .month
+        }
+    }
+
+    /*
     func checkForUpdate(){
         let query = self.db.collection("schedules").whereField("day", isEqualTo: self.dstring)
         query.addSnapshotListener {
@@ -133,6 +108,7 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
         
         }
     }
+ */
     
 
 }

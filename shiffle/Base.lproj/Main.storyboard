@@ -151,7 +151,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XcA-D0-6eh">
-                                <rect key="frame" x="36" y="814" width="118" height="22"/>
+                                <rect key="frame" x="46" y="814" width="118" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="My Team">
                                     <imageReference key="image" image="person.3.fill" catalog="system" symbolScale="large"/>
@@ -161,23 +161,26 @@
                                     <action selector="viewMyTeam:" destination="WZC-Hs-pT9" eventType="touchUpInside" id="VRs-Z4-so7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjT-Py-LJ5">
-                                <rect key="frame" x="358" y="798" width="56" height="54"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTm-6Y-wb3">
+                                <rect key="frame" x="344" y="805" width="27" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add">
+                                <state key="normal" title="Add New Schedule 2">
                                     <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="heavy"/>
                                 </state>
                                 <connections>
-                                    <action selector="addSchedule:" destination="WZC-Hs-pT9" eventType="touchUpInside" id="LuL-m6-6BE"/>
+                                    <segue destination="rWg-9X-Bfj" kind="show" id="WK1-hF-YEl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HTm-6Y-wb3">
-                                <rect key="frame" x="136" y="814" width="143" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyS-VR-L26">
+                                <rect key="frame" x="192" y="811" width="30" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add New Schedule 2"/>
+                                <state key="normal" title="Button">
+                                    <imageReference key="image" image="calendar" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="heavy"/>
+                                </state>
                                 <connections>
-                                    <segue destination="rWg-9X-Bfj" kind="show" id="WK1-hF-YEl"/>
+                                    <action selector="switchCalendarScope:" destination="WZC-Hs-pT9" eventType="touchUpInside" id="NGv-Wc-IH2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -243,20 +246,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2OJ-Bu-emz">
-                                <rect key="frame" x="49" y="331" width="322" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="z9K-PS-ev6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Oxc-Lz-rd5"/>
                     <connections>
-                        <outlet property="dateInput" destination="2OJ-Bu-emz" id="JYJ-Ue-nHD"/>
                         <outlet property="endTimeInput" destination="bXQ-SF-FI6" id="5ej-Io-xGh"/>
+                        <outlet property="nameInput" destination="v29-t5-kQf" id="ODf-c9-AqL"/>
                         <outlet property="startTimeInput" destination="N1k-k4-PhH" id="31s-hz-vaq"/>
                     </connections>
                 </viewController>
@@ -417,6 +414,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>

@@ -6,27 +6,24 @@
 //
 
 import UIKit
-import FirebaseDatabase
+import FirebaseFirestore
 
 class AddShiftViewController: UIViewController {
 
     @IBOutlet weak var startTimeInput: UITextField!
-    
     @IBOutlet weak var endTimeInput: UITextField!
+    @IBOutlet weak var nameInput: UITextField!
     
-    @IBOutlet weak var dateInput: UITextField!
-    
+    var db:Firestore!
     var startTimePicker: UIDatePicker!
     var endTimePicker: UIDatePicker!
-    var datePicker: UIDatePicker!
     
-    var refSchedules:DatabaseReference?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        db = Firestore.firestore()
         setupTimePicker()
         setupEndTimePicker()
-        setupDatePicker()
        
                 // Do any additional setup after loading the view.
     }
@@ -99,40 +96,6 @@ class AddShiftViewController: UIViewController {
     }
     
     
-    func setupDatePicker() {
-        self.datePicker = UIDatePicker.init(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 200))
-        datePicker.datePickerMode = .date
-        datePicker.addTarget(self, action: #selector(self.dateChanged), for: .allEvents)
-        
-        if #available(iOS 13.4, *) {
-            datePicker.preferredDatePickerStyle = .wheels
-        }
-        
-        self.dateInput.inputView = datePicker
-        
-        let toolBar: UIToolbar = UIToolbar.init(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 44))
-        
-        let spaceButton:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        
-        let doneButton:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.tapOnDoneButDate))
-        
-        toolBar.setItems([spaceButton, doneButton], animated: true)
-        
-        self.dateInput.inputAccessoryView = toolBar
-        
-    }
-    
-    @objc func dateChanged() {
-        let timeFormat = DateFormatter()
-        timeFormat.dateFormat = "MM/dd/yyyy"
-        self.dateInput.text = timeFormat.string(from: datePicker.date)
-    }
-    
-    @objc func tapOnDoneButDate() {
-        dateInput.resignFirstResponder()
-    }
-    
-    
     @IBAction func backToMain(_ sender: Any) {
         presentingViewController?.dismiss(animated: true, completion: nil)
     }
@@ -143,9 +106,8 @@ class AddShiftViewController: UIViewController {
     }
     
     func addNewShift(){
-    
- /*       if let inputTime = composeAlert.textFields?.first?.text, let inputName = composeAlert.textFields?.last?.text {
-            let newSchedule = Schedule(day:self.dstring, time: inputTime, name: inputName)
+        if let inputStartTime = self.startTimeInput.text, let inputEndTime = self.endTimeInput.text , let inputName = self.nameInput.text {
+            let newSchedule = Schedule(day:selectedDate.selectedDate, startTime: inputStartTime, endTime: inputEndTime, name: inputName)
             self.db.collection("schedules").addDocument(data: newSchedule.dictionary){
                 error in
                     if let error = error {
@@ -155,17 +117,6 @@ class AddShiftViewController: UIViewController {
                     }
             }
             
-        } */
-        
+        }        
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
