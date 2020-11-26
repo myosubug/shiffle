@@ -10,6 +10,7 @@ import FirebaseFirestore
 
 class AddShiftViewController: UIViewController {
 
+    
     @IBOutlet weak var startTimeInput: UITextField!
     @IBOutlet weak var endTimeInput: UITextField!
     @IBOutlet weak var nameInput: UITextField!
@@ -24,8 +25,6 @@ class AddShiftViewController: UIViewController {
         db = Firestore.firestore()
         setupTimePicker()
         setupEndTimePicker()
-       
-                // Do any additional setup after loading the view.
     }
     
     func setupTimePicker() {
@@ -119,4 +118,6 @@ class AddShiftViewController: UIViewController {
             
         }        
     }
+    
+    
 }

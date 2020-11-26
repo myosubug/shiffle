@@ -16,8 +16,10 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
     @IBOutlet var table: UITableView!
     var daySchedule = [Schedule]()
     var dstring = ""
-    
-    
+    var timer: Timer?
+
+
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,10 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
         format.dateFormat = "YYYYMMdd"
         dstring = format.string(from: currentDateTime)
         selectedDate.selectedDate = dstring
-        loadSchedule()
+        timer =  Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { (timer) in
+            self.loadSchedule()
+        }
+        
                
     }
     
@@ -40,6 +45,7 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
         dstring = format.string(from: date)
         selectedDate.selectedDate = dstring
         loadSchedule()
+        
     }
     
        
@@ -86,29 +92,4 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
             self.calendar.scope = .month
         }
     }
-
-    /*
-    func checkForUpdate(){
-        let query = self.db.collection("schedules").whereField("day", isEqualTo: self.dstring)
-        query.addSnapshotListener {
-            QuerySnapshot, error in
-            
-            guard let snapshot = QuerySnapshot else {return}
-            snapshot.documentChanges.forEach{
-                diff in
-                if diff.type == .added{
-                    self.daySchedule.append(Schedule(dictionary: diff.document.data())!)
-                    DispatchQueue.main.async {
-                        self.table.reloadData()
-                    }
-                }
-            }
-                
-        
-        
-        }
-    }
- */
-    
-
 }
