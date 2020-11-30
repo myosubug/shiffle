@@ -30,7 +30,7 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
         format.dateFormat = "YYYYMMdd"
         dstring = format.string(from: currentDateTime)
         selectedDate.selectedDate = dstring
-        timer =  Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { (timer) in
+        timer =  Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { (timer) in
             self.loadSchedule()
         }
         
