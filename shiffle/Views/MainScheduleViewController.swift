@@ -17,9 +17,7 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
     var daySchedule = [Schedule]()
     var dstring = ""
     var timer: Timer?
-
-
-        
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +66,26 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
         return cell
     }
     
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt: IndexPath) -> UITableViewCell.EditingStyle{
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // I try make delete here but not working
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+           //implement delet row here
+            
+            tableView.beginUpdates()
+            
+            tableView.endUpdates()
+        }
+    }
+   
     func loadSchedule(){
         let query = self.db.collection("schedules").whereField("day", isEqualTo: self.dstring)
         query.getDocuments() {
