@@ -76,9 +76,28 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        // I try make delete here but not working
+        let s = daySchedule[indexPath.row]
+        let qstart = s.startTime
+        let qend = s.endTime
+        
         if editingStyle == UITableViewCell.EditingStyle.delete {
-           //implement delet row here
+            let query = self.db.collection("schedules").whereField("day", isEqualTo: self.dstring)
+            query.getDocuments() {
+                QuerySnapshot, error in
+                if let error = error {
+                    print("\(error.localizedDescription)")
+                } else{
+                    for q in QuerySnapshot!.documents {
+                        if qstart == q.data()["startTime"] as! String, qend == q.data()["endTime"] as! String {
+                            q.reference.delete()
+                        }
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.table.reloadData()
+                    }
+                }
+            }
             
             tableView.beginUpdates()
             
@@ -109,4 +128,5 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
             self.calendar.scope = .month
         }
     }
+    
 }
