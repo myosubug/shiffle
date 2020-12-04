@@ -79,6 +79,7 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
         let s = daySchedule[indexPath.row]
         let qstart = s.startTime
         let qend = s.endTime
+        let qname = s.name
         
         if editingStyle == UITableViewCell.EditingStyle.delete {
             let query = self.db.collection("schedules").whereField("day", isEqualTo: self.dstring)
@@ -88,7 +89,7 @@ class MainScheduleViewController: UIViewController, FSCalendarDelegate, UITableV
                     print("\(error.localizedDescription)")
                 } else{
                     for q in QuerySnapshot!.documents {
-                        if qstart == q.data()["startTime"] as! String, qend == q.data()["endTime"] as! String {
+                        if qstart == q.data()["startTime"] as! String, qend == q.data()["endTime"] as! String, qname == q.data()["name"] as! String {
                             q.reference.delete()
                         }
                     }
