@@ -12,6 +12,8 @@ import FirebaseFirestore
 
 class SignUpViewController: UIViewController {
 
+    
+    // modify textfield
     @IBOutlet var email: UITextField!
     @IBOutlet var password: UITextField!
     var db:Firestore!
