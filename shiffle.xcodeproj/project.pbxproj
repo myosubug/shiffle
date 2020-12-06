@@ -22,6 +22,7 @@
 		48EB83A4256E513C007BBBC1 /* selectedDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EB83A3256E513C007BBBC1 /* selectedDate.swift */; };
 		F004085F25652BA600EFC009 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F004085E25652BA600EFC009 /* TeamViewController.swift */; };
 		F02EB5A62548935900C3CB9A /* MainScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02EB5A52548935900C3CB9A /* MainScheduleViewController.swift */; };
+		F059A608257D6597001DE1DA /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F059A607257D6597001DE1DA /* WelcomeViewController.swift */; };
 		F077BE042565298100EEBAE8 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F077BE032565298100EEBAE8 /* EmployeeTableViewCell.swift */; };
 		F08B2F7E2563A46E003334EE /* EditTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08B2F7D2563A46E003334EE /* EditTeamViewController.swift */; };
 		F0A7CA28256CD3C80005AC1E /* AddShiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A7CA27256CD3C80005AC1E /* AddShiftViewController.swift */; };
@@ -48,6 +49,7 @@
 		AB0154AC5343174A5D6A6DE7 /* Pods-shiffle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shiffle.debug.xcconfig"; path = "Target Support Files/Pods-shiffle/Pods-shiffle.debug.xcconfig"; sourceTree = "<group>"; };
 		F004085E25652BA600EFC009 /* TeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		F02EB5A52548935900C3CB9A /* MainScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScheduleViewController.swift; sourceTree = "<group>"; };
+		F059A607257D6597001DE1DA /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		F077BE032565298100EEBAE8 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
 		F08B2F7D2563A46E003334EE /* EditTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTeamViewController.swift; sourceTree = "<group>"; };
 		F0A7CA27256CD3C80005AC1E /* AddShiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShiftViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				F077BE032565298100EEBAE8 /* EmployeeTableViewCell.swift */,
 				F004085E25652BA600EFC009 /* TeamViewController.swift */,
 				F0A7CA27256CD3C80005AC1E /* AddShiftViewController.swift */,
+				F059A607257D6597001DE1DA /* WelcomeViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				F0D8061525651D2D004E96E8 /* EmployeeModel.swift in Sources */,
 				F077BE042565298100EEBAE8 /* EmployeeTableViewCell.swift in Sources */,
 				48A89E25253BBEC200853BFD /* AppDelegate.swift in Sources */,
+				F059A608257D6597001DE1DA /* WelcomeViewController.swift in Sources */,
 				4891891B254090D700397870 /* SignUpViewController.swift in Sources */,
 				F02EB5A62548935900C3CB9A /* MainScheduleViewController.swift in Sources */,
 				48EB83A4256E513C007BBBC1 /* selectedDate.swift in Sources */,

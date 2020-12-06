@@ -11,7 +11,8 @@ import FirebaseFirestore
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet var email: UITextField!
+    @IBOutlet var email : UITextField!
+    
     @IBOutlet var password: UITextField!
     var db:Firestore!
     
