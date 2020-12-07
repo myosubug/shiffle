@@ -22,6 +22,9 @@ class AddShiftViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startTimeInput.layer.cornerRadius = 25;
+        endTimeInput.layer.cornerRadius = 25;
+        nameInput.layer.cornerRadius = 25;
         db = Firestore.firestore()
         setupTimePicker()
         setupEndTimePicker()

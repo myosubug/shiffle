@@ -20,7 +20,8 @@ class EditTeamViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        textFieldName.layer.cornerRadius = 25;
+        textFieldContact.layer.cornerRadius = 25;
 
         refEmployees = Database.database().reference()
 

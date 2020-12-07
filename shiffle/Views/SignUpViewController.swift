@@ -20,6 +20,10 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        email.layer.borderWidth = 1;
+        email.layer.cornerRadius = 25;
+        password.layer.borderWidth = 1;
+        password.layer.cornerRadius = 25;
         self.password.isSecureTextEntry = true
         db = Firestore.firestore()
         

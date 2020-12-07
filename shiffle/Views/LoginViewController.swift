@@ -12,12 +12,19 @@ import FirebaseFirestore
 class LoginViewController: UIViewController {
 
     @IBOutlet var email : UITextField!
-    
+   
     @IBOutlet var password: UITextField!
     var db:Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        email.layer.borderWidth = 1;
+        email.layer.cornerRadius = 25;
+        
+        password.layer.borderWidth = 1;
+        password.layer.cornerRadius = 25;
+        
+  
         self.password.isSecureTextEntry = true
         db = Firestore.firestore()
     }
